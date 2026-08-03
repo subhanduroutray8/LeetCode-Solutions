@@ -1,7 +1,10 @@
 1class Solution(object):
 2    def removeDuplicates(self, nums):
-3        for x in nums[:]:
-4            while nums.count(x) > 1:
-5                nums.remove(x)
-6        return len(nums)
-7               
+3        
+4        :type nums: List[int]
+5        :rtype: int
+6        
+7        for i in nums:
+8            while nums.count(i) > 1:
+9                nums.remove(i) 
+10        return len(nums)    
