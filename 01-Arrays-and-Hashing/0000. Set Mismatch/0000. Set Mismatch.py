@@ -1,1 +1,23 @@
-class Solution(object):    def findMaxConsecutiveOnes(self, nums):        count = 0        max_count = 0        for i in range(0,len(nums)):            if nums[i] == 1:                count += 1            else:                count = 0            if count > max_count:                max_count = count        return max_count 
+1class Solution(object):
+2    def findErrorNums(self, nums):
+3        
+4        missing = 0
+5        duplicate = 0
+6        
+7        frq = {}
+8
+9        for i in nums:
+10            if i in frq:
+11                frq[i] += 1
+12            else:
+13                frq[i] = 1
+14        
+15        for i in range(1,len(nums)+1):
+16            if frq.get(i, 0) == 0:
+17                missing = i
+18        
+19        for i,j in frq.items():
+20            if j == 2:
+21                duplicate = i
+22        
+23        return [duplicate, missing]
