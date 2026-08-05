@@ -4,13 +4,14 @@
 4        :type nums: List[int]
 5        :rtype: List[int]
 6        
-7        new = []
-8
-9        mini = min(nums)
-10        maxi = max(nums)
-11
-12        for i in range(mini + 1, maxi):
-13            if i not in nums:
-14                new.append(i)
-15                    
-16        return new
+7        lst = []
+8        s = min(nums)
+9        l = max(nums)
+10
+11        st = set(nums)
+12
+13        for i in range(s,l):
+14            if i not in st:
+15                lst.append(i)
+16        
+17        return lst
